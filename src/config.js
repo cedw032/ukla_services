@@ -1,5 +1,5 @@
 export default function config() {
 	return {
-		isDev: false,
+		isDev: true,
 	};
 }
