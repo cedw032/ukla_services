@@ -18,31 +18,29 @@ export default class Login extends Component {
 
 		return (
 			<div className='login-view'>
-				<div className='panel'>
-					<Logo />
-					<FormInput 
-						label='user'
-						type='text'
-						value={username}
-						onChange={({target: {value}}) => {
-							this.setState({username: value});
-						}} />
-					<FormInput 
-						label='password'
-						type='password'
-						value={password}
-						onChange={({target: {value}}) => {
-							this.setState({password: value});
-						}} />
-					<button children='next' 
-						onClick={ () => {
-							api.post('auth/login', this.state)
-							.then(onLogin).catch((error) => {
-								this.setState({error});
-							});
-						}} />
-					{error && <span className='error'>{error}</span>}
-				</div>
+				<Logo />
+				<FormInput 
+					label='user'
+					type='text'
+					value={username}
+					onChange={({target: {value}}) => {
+						this.setState({username: value});
+					}} />
+				<FormInput 
+					label='password'
+					type='password'
+					value={password}
+					onChange={({target: {value}}) => {
+						this.setState({password: value});
+					}} />
+				<button children='next' 
+					onClick={ () => {
+						api.post('auth/login', this.state)
+						.then(onLogin).catch((error) => {
+							this.setState({error});
+						});
+					}} />
+				{error && <span className='error'>{error}</span>}
 			</div>
 		);
 	}
