@@ -40,6 +40,21 @@ $deep_red: #6E0E0A;
 	.upload-enrolment {
 		flex-direction: column;
 		align-items: center;
+
+		.upload-sheet-header {
+			display: block;
+
+			input {
+				font-weight: bold;
+			}
+		}
+
+		.upload-sheet-body {
+			display: block;
+			max-height: 200px;
+			overflow-y: auto;
+			width: 100%;
+		}
 	}
 }
 

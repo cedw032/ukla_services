@@ -18,12 +18,7 @@ export default function Dropzone({onFileLoad}) {
 
 	    	if (files.length) {
 	    		var reader = new FileReader();
-
-	    		reader.onload = (e) => {
-	    			console.log('File!!', e.currentTarget.result);
-	    			onFileLoad(e.currentTarget.result);
-	    		};			
-
+	    		reader.onload = e => onFileLoad(e.currentTarget.result);			
 				reader.readAsBinaryString(files[0]);
 	    	}
 		}} />;

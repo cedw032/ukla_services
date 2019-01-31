@@ -9,6 +9,10 @@ export default class FormInput extends Component {
 			onChange,
 			value,
 			type
+
+			// validate,
+			// isValid,
+			// showValidationError,
 		} = this.props
 
 		return (

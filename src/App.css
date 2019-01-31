@@ -22,6 +22,15 @@
   .app .upload-enrolment {
     flex-direction: column;
     align-items: center; }
+    .app .upload-enrolment .upload-sheet-header {
+      display: block; }
+      .app .upload-enrolment .upload-sheet-header input {
+        font-weight: bold; }
+    .app .upload-enrolment .upload-sheet-body {
+      display: block;
+      max-height: 200px;
+      overflow-y: auto;
+      width: 100%; }
 
 .app .login-view,
 .app .main-menu,
