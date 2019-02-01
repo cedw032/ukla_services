@@ -1,37 +1,43 @@
-import axios from 'axios'
 import config from './config'
 
 export default function provideApi(token) {
 
-	const getUrl = (route) => {
+	const toUrl = (route, method) => {
 		const base = config().isDev ? 'http://localhost:5000/' : 'https://still-hollows-65231.herokuapp.com/';
+		route = method ? `${method}/${route}` : route;
 		const url = base + route; 
 		return url;
 	}
 
-	return {
-		post: (route, payload) => {
-			return new Promise((resolve, reject) => {
-				axios.post(getUrl(route), payload)
-				.then((result) => {
-					if (result.data.status === 'success') {
-						resolve(result.data.data);
-						return;
-					}
+	const send = (route, body, method) => {
+		console.log('body', body);
+		return new Promise((resolve, reject) => {
+			fetch(toUrl(route, method), {
+				method: 'post',
+				headers: {"Content-Type": "application/json"},
+				body: JSON.stringify(body),
+			})
+			.then((response) => response.json())
+			.then((result) => {
 
-					console.error(result.data.message);
-					reject(result.data.message);
-				})
-				.catch((e) => {
-					console.error(e.message);
-					reject(e.message);
-				});
+				if (result.status === 'success') {
+					resolve(result.data);
+					return;
+				}
+
+				console.error(result.message);
+				reject(result.message);
+			})
+			.catch((e) => {
+				console.error(e.message);
+				reject(e.message);
 			});
-		},
+		});
+	}
 
-		get: (route, payload) => {
-
-		},
+	return {
+		post: (route, body) => send(route, body),
+		get: (route, body) => send(route, body, 'query'),
 	};
 
 }
