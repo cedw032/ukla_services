@@ -11,7 +11,7 @@
   .app .login-view .error,
   .app .main-menu .error,
   .app .create-user .error,
-  .app .upload-enrolment .error {
+  .app .upload-intake .error {
     border: 1px solid #6E0E0A;
     color: #6E0E0A;
     border-radius: 5px;
@@ -19,14 +19,14 @@
     padding: 10px; }
   .app .main-menu {
     flex-direction: column; }
-  .app .upload-enrolment {
+  .app .upload-intake {
     flex-direction: column;
     align-items: center; }
-    .app .upload-enrolment .upload-sheet-header {
+    .app .upload-intake .upload-sheet-header {
       display: block; }
-      .app .upload-enrolment .upload-sheet-header input {
+      .app .upload-intake .upload-sheet-header input {
         font-weight: bold; }
-    .app .upload-enrolment .upload-sheet-body {
+    .app .upload-intake .upload-sheet-body {
       display: block;
       max-height: 200px;
       overflow-y: auto;
@@ -35,7 +35,7 @@
 .app .login-view,
 .app .main-menu,
 .app .create-user,
-.app .upload-enrolment {
+.app .upload-intake {
   background-color: #FEFEFE;
   display: inline-flex;
   border-radius: 5px;

@@ -7,7 +7,7 @@ export default class MainMenu extends Component {
 
 		return (
 			<div className="main-menu">
-				<button onClick={() => navigate('uploadEnrolment')}>Upload Enrolment</button>
+				<button onClick={() => navigate('uploadIntake')}>Upload Intake</button>
 				<button onClick={() => navigate('enterMarks')}>Enter Marks</button>
 				<button onClick={() => navigate('printReports')}>Print Reports</button>
 				<button onClick={() => navigate('createUser')}>Create User</button>

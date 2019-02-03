@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import CreateUser from './views/CreateUser';
 import MainMenu from './views/MainMenu';
-import UploadEnrolment from './views/UploadEnrolment';
+import UploadIntake from './views/UploadIntake';
 import EnterMarks from './views/EnterMarks';
 import PrintReports from './views/PrintReports';
 import Login from './views/Login';
@@ -49,7 +49,7 @@ class App extends Component {
 		const currentView = token ? {
 			mainMenu: <MainMenu {...viewProps} />,
 			createUser: <CreateUser {...viewProps} />,
-			uploadEnrolment: <UploadEnrolment {...viewProps} />,
+			uploadIntake: <UploadIntake {...viewProps} />,
 			enterMarks: <EnterMarks {...viewProps} />,
 			printReports: <PrintReports {...viewProps} />,
 		}[path] : <Login onLogin={onLogin} {...viewProps} />

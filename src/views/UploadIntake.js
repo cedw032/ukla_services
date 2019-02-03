@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Dropzone from '../styled_components/Dropzone'; 
 import XLSX from '../../node_modules/xlsx/xlsx.js';
 
-export default class UploadEnrolment extends Component {
+export default class UploadIntake extends Component {
 
 	constructor(props) {
 		super(props); 
@@ -34,19 +34,19 @@ export default class UploadEnrolment extends Component {
 	}
 
 	onSheetConfirm = () => {
-		this.setState({mode: 'nameEnrolment'});
+		this.setState({mode: 'nameIntake'});
 	}
 
-	onEnrolmentNameChange = ({target: {value}}) => {
-		this.setState({enrolmentName: value});
+	onIntakeNameChange = ({target: {value}}) => {
+		this.setState({intakeName: value});
 	}
 
-	onEnrolmentNameConfirm = () => {
+	onIntakeNameConfirm = () => {
 		this.setState({mode: 'upload'});
 
 		const {
 			state: {
-				enrolmentName,
+				intakeName,
 				currentSheetName,
 				grids,
 			},
@@ -55,8 +55,8 @@ export default class UploadEnrolment extends Component {
 			}
 		} = this;
 
-		api.post('enrolment', {
-			enrolmentName,
+		api.post('intake', {
+			intakeName,
 			students: grids[currentSheetName]
 		}).then(() => {
 			this.setState({mode: 'uploadComplete'});
@@ -73,18 +73,18 @@ export default class UploadEnrolment extends Component {
 				currentSheetName,
 				sheetNames,
 				grids,
-				enrolmentName = '',
+				intakeName = '',
 			},
 			processFile,
 			onSheetSelect,
 			onSheetConfirm,
-			onEnrolmentNameChange,
-			onEnrolmentNameConfirm,
+			onIntakeNameChange,
+			onIntakeNameConfirm,
 		} = this;
 
 		return (
-			<div className="upload-enrolment">
-				<h1>Upload Enrolment</h1>
+			<div className="upload-intake">
+				<h1>Upload Intake</h1>
 				{{
 					selectFile: <Dropzone onFileLoad={processFile} />,
 					selectSheet: <SelectSheet 
@@ -93,9 +93,9 @@ export default class UploadEnrolment extends Component {
 						currentSheetName={currentSheetName}
 						onSelect={onSheetSelect} 
 						onConfirm={onSheetConfirm} />,
-					nameEnrolment: [
-						<input key='input' value={enrolmentName} onChange={onEnrolmentNameChange} />,
-						<button key='button' onClick={onEnrolmentNameConfirm}>Next</button>
+					nameIntake: [
+						<input key='input' value={intakeName} onChange={onIntakeNameChange} />,
+						<button key='button' onClick={onIntakeNameConfirm}>Next</button>
 					],
 					upload: <span>Saving...</span>,
 					uploadComplete: [

@@ -20,7 +20,7 @@ $deep_red: #6E0E0A;
 	.login-view,
 	.main-menu,
 	.create-user,
-	.upload-enrolment,
+	.upload-intake,
 	 {
 		@extend %panel;
 
@@ -37,7 +37,7 @@ $deep_red: #6E0E0A;
 		flex-direction: column;
 	}
 
-	.upload-enrolment {
+	.upload-intake {
 		flex-direction: column;
 		align-items: center;
 
