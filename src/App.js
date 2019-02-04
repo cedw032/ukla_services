@@ -44,8 +44,6 @@ class App extends Component {
 			navigate,
 		}
 
-		console.log('VP', viewProps);
-
 		const currentView = token ? {
 			mainMenu: <MainMenu {...viewProps} />,
 			createUser: <CreateUser {...viewProps} />,

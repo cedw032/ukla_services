@@ -21,6 +21,7 @@ $deep_red: #6E0E0A;
 	.main-menu,
 	.create-user,
 	.upload-intake,
+	.enter-marks
 	 {
 		@extend %panel;
 
@@ -39,22 +40,32 @@ $deep_red: #6E0E0A;
 
 	.upload-intake {
 		flex-direction: column;
-		align-items: center;
+		align-items: center;		
+	}
 
-		.upload-sheet-header {
-			display: block;
+	.enter-marks {
 
-			input {
-				font-weight: bold;
+		:nth-child(2) {
+			>.cell {
+				max-width: 120px;
 			}
 		}
 
-		.upload-sheet-body {
-			display: block;
-			max-height: 200px;
-			overflow-y: auto;
-			width: 100%;
+		:nth-child(1),
+		:nth-child(3),
+		:nth-child(4),
+		:nth-child(5),
+		:nth-child(6),
+		:nth-child(7),
+		:nth-child(8),
+		:nth-child(9),
+		:nth-child(10),
+		:nth-child(11) {
+			>.cell {
+				max-width: 60px;
+			}
 		}
+
 	}
 }
 
@@ -103,5 +114,22 @@ button {
 	&:focus {
 		background-color: #CECECE;
 		outline: none;
+	}
+}
+
+.cells {
+	.cells-header {
+		display: block;
+
+		input {
+			font-weight: bold;
+		}
+	}
+
+	.cells-body {
+		display: block;
+		max-height: 200px;
+		overflow-y: auto;
+		width: 100%;
 	}
 }

@@ -11,7 +11,8 @@
   .app .login-view .error,
   .app .main-menu .error,
   .app .create-user .error,
-  .app .upload-intake .error {
+  .app .upload-intake .error,
+  .app .enter-marks .error {
     border: 1px solid #6E0E0A;
     color: #6E0E0A;
     border-radius: 5px;
@@ -22,20 +23,25 @@
   .app .upload-intake {
     flex-direction: column;
     align-items: center; }
-    .app .upload-intake .upload-sheet-header {
-      display: block; }
-      .app .upload-intake .upload-sheet-header input {
-        font-weight: bold; }
-    .app .upload-intake .upload-sheet-body {
-      display: block;
-      max-height: 200px;
-      overflow-y: auto;
-      width: 100%; }
+  .app .enter-marks :nth-child(2) > .cell {
+    max-width: 120px; }
+  .app .enter-marks :nth-child(1) > .cell,
+  .app .enter-marks :nth-child(3) > .cell,
+  .app .enter-marks :nth-child(4) > .cell,
+  .app .enter-marks :nth-child(5) > .cell,
+  .app .enter-marks :nth-child(6) > .cell,
+  .app .enter-marks :nth-child(7) > .cell,
+  .app .enter-marks :nth-child(8) > .cell,
+  .app .enter-marks :nth-child(9) > .cell,
+  .app .enter-marks :nth-child(10) > .cell,
+  .app .enter-marks :nth-child(11) > .cell {
+    max-width: 60px; }
 
 .app .login-view,
 .app .main-menu,
 .app .create-user,
-.app .upload-intake {
+.app .upload-intake,
+.app .enter-marks {
   background-color: #FEFEFE;
   display: inline-flex;
   border-radius: 5px;
@@ -70,3 +76,14 @@ button {
   button:focus {
     background-color: #CECECE;
     outline: none; }
+
+.cells .cells-header {
+  display: block; }
+  .cells .cells-header input {
+    font-weight: bold; }
+
+.cells .cells-body {
+  display: block;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%; }

@@ -10,7 +10,6 @@ export default function provideApi(token) {
 	}
 
 	const send = (route, body, method) => {
-		console.log('body', body);
 		return new Promise((resolve, reject) => {
 			fetch(toUrl(route, method), {
 				method: 'post',

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import Dropzone from '../styled_components/Dropzone'; 
+
 import XLSX from '../../node_modules/xlsx/xlsx.js';
+
+import Dropzone from '../styled_components/Dropzone'; 
+import Cells from '../styled_components/Cells';
 
 export default class UploadIntake extends Component {
 
@@ -110,35 +113,20 @@ export default class UploadIntake extends Component {
 
 function SelectSheet({sheetNames, grids, currentSheetName, onSelect, onConfirm}) {
 
-	const grid = grids[currentSheetName] || [];
+	let grid = grids[currentSheetName] || [];
 	const columns = Object.keys(grid[0] || {});
+
+	grid = grid.map(row =>
+		Object.keys(row).map(key => 
+			({value: row[key]})
+		)
+	);
 
 	return [
 		<select key='select' value={currentSheetName} onChange={onSelect}>
 			{sheetNames.map((name, i) => <option key={i} value={name}>{name}</option>)}
 		</select>,
-		<table key='table'>
-			<thead className='upload-sheet-header'>
-				<tr>
-					{columns.map((column, i) => 
-						<th key={i}>
-							<input value={column} readOnly />
-						</th>
-					)}
-				</tr>
-			</thead>
-			<tbody className='upload-sheet-body'>
-				{grid.map((row, i) => 
-					<tr key={i}>
-						{columns.map((column,i) => 
-							<td key={i}>
-								<input value={row[column]} readOnly/>
-							</td>
-						)}
-					</tr>
-				)}
-			</tbody>
-		</table>,
+		<Cells key='cells' {...{columns, grid}} />,
 		<button key='button' onClick={onConfirm}>Next</button>
 	];
 }
