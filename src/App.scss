@@ -44,6 +44,7 @@ $deep_red: #6E0E0A;
 	}
 
 	.enter-marks {
+		flex-direction: column;
 
 		:nth-child(2) {
 			>.cell {
@@ -115,6 +116,11 @@ button {
 		background-color: #CECECE;
 		outline: none;
 	}
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
 }
 
 .cells {

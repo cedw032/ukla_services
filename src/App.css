@@ -23,19 +23,21 @@
   .app .upload-intake {
     flex-direction: column;
     align-items: center; }
-  .app .enter-marks :nth-child(2) > .cell {
-    max-width: 120px; }
-  .app .enter-marks :nth-child(1) > .cell,
-  .app .enter-marks :nth-child(3) > .cell,
-  .app .enter-marks :nth-child(4) > .cell,
-  .app .enter-marks :nth-child(5) > .cell,
-  .app .enter-marks :nth-child(6) > .cell,
-  .app .enter-marks :nth-child(7) > .cell,
-  .app .enter-marks :nth-child(8) > .cell,
-  .app .enter-marks :nth-child(9) > .cell,
-  .app .enter-marks :nth-child(10) > .cell,
-  .app .enter-marks :nth-child(11) > .cell {
-    max-width: 60px; }
+  .app .enter-marks {
+    flex-direction: column; }
+    .app .enter-marks :nth-child(2) > .cell {
+      max-width: 120px; }
+    .app .enter-marks :nth-child(1) > .cell,
+    .app .enter-marks :nth-child(3) > .cell,
+    .app .enter-marks :nth-child(4) > .cell,
+    .app .enter-marks :nth-child(5) > .cell,
+    .app .enter-marks :nth-child(6) > .cell,
+    .app .enter-marks :nth-child(7) > .cell,
+    .app .enter-marks :nth-child(8) > .cell,
+    .app .enter-marks :nth-child(9) > .cell,
+    .app .enter-marks :nth-child(10) > .cell,
+    .app .enter-marks :nth-child(11) > .cell {
+      max-width: 60px; }
 
 .app .login-view,
 .app .main-menu,
@@ -76,6 +78,10 @@ button {
   button:focus {
     background-color: #CECECE;
     outline: none; }
+
+.row {
+  display: flex;
+  flex-direction: row; }
 
 .cells .cells-header {
   display: block; }
