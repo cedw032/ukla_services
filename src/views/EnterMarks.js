@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Cells from '../styled_components/Cells';
 import Select from '../styled_components/Select';
 
+import unboxThen from '../utils/unboxThen';
+
 
 export default class EnterMarks extends Component {
 
@@ -207,10 +209,10 @@ export default class EnterMarks extends Component {
 				<div className='row'>
 					<Select 
 						options={getTeachers({students})} 
-						onChange={({target: {value}}) => selectTeacher(value)} />
+						onChange={unboxThen(selectTeacher)} />
 					<Select 
 						options={getGrades({students})} 
-						onChange={({target: {value}}) => selectGrade(value)} />
+						onChange={unboxThen(selectGrade)} />
 				</div>
 
 				<Cells 

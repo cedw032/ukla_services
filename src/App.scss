@@ -1,21 +1,24 @@
-$yellow: #FCC13F;
 $white: #FEFEFE;
 $deep_red: #6E0E0A;
 
 .app {
-	background-color: $yellow;
 	position: fixed;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	padding-top: 20%;
+	padding-top: 4vh;
 	text-align: center;
 
 	font-family: -apple-system, BlinkMacSystemFont,
     	'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
 	    'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     	sans-serif;
+
+    .background {
+    	min-width: 100%;
+    	min-height: 100%;
+    }
 
 	.login-view,
 	.main-menu,
@@ -36,6 +39,10 @@ $deep_red: #6E0E0A;
 
 	.main-menu {
 		flex-direction: column;
+
+		.tile {
+			flex: 1;
+		}
 	}
 
 	.upload-intake {
@@ -72,8 +79,10 @@ $deep_red: #6E0E0A;
 
 %panel {
 	background-color: $white;
+	min-width: 92vw;
+	min-height: 92vh;
 	display: inline-flex;
-	border-radius: 5px;
+	opacity: 0.90;
 	padding: 10px;
 	font-size: 14px;
 }
@@ -115,6 +124,43 @@ button {
 	&:focus {
 		background-color: #CECECE;
 		outline: none;
+	}
+}
+
+.tile {
+
+	background-color: antiquewhite;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 10px;
+
+	&:last-child {
+		margin-bottom: 0px;
+	}
+
+	h1 {
+		font-size: 1rem;
+	}
+
+	p {
+		visibility: hidden;
+		max-width: 80vw;
+	}
+
+	&:hover {
+
+		border: 1px solid black;
+		margin: -1px;
+		margin-bottom: 9px;
+
+		&:last-child {
+			margin-bottom: -1px;
+		}
+
+		p {
+			visibility: visible;
+		}
 	}
 }
 
